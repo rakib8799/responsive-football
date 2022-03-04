@@ -1,0 +1,261 @@
+/* Import a Google Font called "Poppins" */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+/* Universal Selector */
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+/* To declare Variables */
+:root {
+        --verySmallSize: 0.5rem;
+        --smallSize: 1rem;
+        --mediumSize: 1.5rem;
+        --largeSize: 2rem;
+        --extraLargeSize: 3rem;
+        --primaryFont: "Poppins", sans-serif;
+        --primaryColor: #e02c6d;
+        --secondaryColor: #ffffff;
+        --bannerColor: rgb(6, 8, 136);
+        --shadowColor: #333333;
+        --borderRadius: 10px;
+}
+/* To set initial values of Body elements */
+body {
+        font-size: var(--smallSize);
+        font-family: var(--primaryFont);
+        line-height: 1.2;
+}
+/* Initially set Image elements */
+img {
+        display: inline-block;
+        width: 100%;
+}
+
+/* Header Section */
+/* Navigation Bar Design */
+#navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+ul {
+        display: flex;
+}
+ul li {
+        list-style-type: none;
+        padding: var(--verySmallSize);
+}
+ul li a {
+        color: var(--secondaryColor);
+        text-decoration: none;
+}
+/* Primary Button Design */
+.primaryBtn {
+        border: none;
+        cursor: pointer;
+        padding: var(--verySmallSize) var(--smallSize);
+        background: var(--primaryColor);
+        color: var(--secondaryColor);
+        transition: all 1s ease-out 1s;
+}
+.primaryBtn:hover {
+        padding: var(--verySmallSize) var(--mediumSize);
+}
+/* Both Header Section & Section-1 */
+#header,
+#section-1 {
+        background: var(--bannerColor);
+}
+
+/* Section-1 */
+#section-1 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: var(--secondaryColor);
+        min-height: 94vh;
+}
+.tinyImg {
+        width: 0.9rem;
+}
+#extraLargeText {
+        font-size: var(--extraLargeSize);
+}
+/* Use Animation for Banner Image */
+#bannerImg {
+        max-width: 45vw;
+        position: relative;
+        animation: bannerImg 5s linear 2s 2 alternate;
+}
+/* Create Animation */
+@keyframes bannerImg {
+        0% {
+                left: 0px;
+                top: 0px;
+        }
+        25% {
+                left: 100px;
+                top: 0px;
+        }
+        50% {
+                left: 100px;
+                top: 100px;
+        }
+        75% {
+                left: 0px;
+                top: 100px;
+        }
+        100% {
+                left: 0px;
+                top: 0px;
+        }
+}
+
+/* Section-2 */
+#section-2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: var(--largeSize);
+        width: 85%;
+        margin: var(--extraLargeSize) auto;
+}
+.playerSection {
+        padding: var(--smallSize);
+        box-shadow: 2px 2px 5px var(--shadowColor);
+        border-radius: var(--borderRadius);
+}
+.playerSection:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 10px var(--shadowColor);
+}
+.setMargin {
+        margin: var(--smallSize) 0 var(--verySmallSize) 0;
+}
+
+/* Section-3 */
+.setAnotherMargin {
+        margin: var(--extraLargeSize) 0 var(--smallSize) 0;
+}
+.largeText {
+        font-size: var(--largeSize);
+}
+.text-center {
+        text-align: center;
+}
+.text-primary {
+        color: var(--primaryColor);
+}
+table {
+        border-collapse: collapse;
+        width: 85%;
+        margin: auto;
+        color: var(--secondaryColor);
+}
+th,
+td {
+        text-align: center;
+        padding: 8px;
+}
+tr:nth-child(even) {
+        background-color: var(--primaryColor);
+}
+tr:nth-child(odd) {
+        background-color: var(--bannerColor);
+}
+th {
+        background-color: var(--shadowColor);
+        color: var(--secondaryColor);
+}
+
+/* Section-4 */
+.setPadding {
+        padding: 0 var(--mediumSize);
+}
+.d-flex {
+        display: flex;
+        align-items: center;
+        width: 85%;
+        margin: auto;
+}
+.largeImg {
+        max-width: 80vw;
+}
+.mediumImg {
+        max-width: 60vw;
+}
+.largeImg,
+.mediumImg {
+        border-radius: var(--borderRadius);
+}
+.bg-dark {
+        background: var(--shadowColor);
+        color: var(--secondaryColor);
+        margin-right: var(--smallSize);
+        border-radius: var(--borderRadius);
+}
+.linkText-flex {
+        display: flex;
+        justify-content: space-between;
+}
+.linkStyle {
+        text-decoration: none;
+        color: white;
+}
+
+/* Section-5 */
+/* Common to other sections */
+
+/* Footer */
+#footer {
+        max-height: 30vh;
+        padding-top: var(--mediumSize);
+}
+.socialIcons {
+        width: 3vw;
+        margin-right: var(--verySmallSize);
+}
+#logo {
+        max-width: 30vw;
+}
+
+/* Media Query for Responsive Design */
+/* For Mobile Devices */
+@media only screen and (max-width: 575px) {
+        #section-1 {
+                display: block;
+                padding-top: var(--largeSize);
+                min-height: 100vh;
+        }
+        #bannerImg {
+                max-width: 90vw;
+                margin: var(--extraLargeSize) auto;
+        }
+        .fa-bars {
+                font-size: var(--largeSize);
+                margin-top: var(--verySmallSize);
+                color: var(--secondaryColor);
+        }
+        .fa-bars::before {
+                visibility: visible;
+        }
+        ul li {
+                display: none;
+        }
+        #section-2 {
+                grid-template-columns: repeat(1, 1fr);
+        }
+        table {
+                min-width: 100vw;
+        }
+        .d-flex {
+                display: block;
+        }
+}
+
+/* For Tablet Devices */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+        #section-2 {
+                grid-template-columns: repeat(2, 1fr);
+        }
+}
